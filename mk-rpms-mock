@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+rpms = """
+    danse.ins-0.1-0.src.rpm
+    journal-0.8-0.src.rpm
+    pyre-0.8-0.src.rpm
+    danse.ins.bpext-0.1-0.src.rpm
+    danse.ins.dsm-0.1-0.src.rpm
+    danse.ins.matter-0.9-0.src.rpm
+    danse.ins.numpyext-0.1-0.src.rpm
+    histogram-0.3-0.src.rpm
+    drchops-2.0alpha-0.src.rpm
+    """.strip().split()
+rpms = ' '.join("$PWD/%s" % rpm for rpm in rpms)
+
+# for rpm in rpms:
+#     cmd = "mock -r epel-7-x86_64 %s" % rpm
+#     print cmd
+#     continue
+cmd = "mock -r epel-7-x86_64 --resultdir /var/lib/mock/epel-7-x86_64/result/ %s" % (rpms,)
+print cmd
+
