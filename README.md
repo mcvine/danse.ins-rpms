@@ -1,5 +1,5 @@
 # danse.ins-rpms
-scripts for creating and uploading rpms to repositories
+scripts for creating and uploading rpms to SNS software package repositories
 
 Steps:
 * For each package, clone from github, build it with
